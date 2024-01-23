@@ -17,8 +17,10 @@ logo_get <- function(path = ".",
                      overwrite = FALSE,
                      color_mode = c("RGB", "CMYK"),
                      category = c("primary", "secondary", "crest", "favicon"),
-                     type = c("vertical", "horizontal", "inversed", "outline"),
-                     color  = c("gold_black", "gold_white", "black", "white", "gold"),
+                     type = if(category[1] %in% c("primary", "secondary")) c("vertical", "horizontal")
+                            else c("inversed", "outline"),
+                     color  = if(category[1] %in% c("primary", "secondary")) c("gold_black", "gold_white", "black", "white")
+                              else c("black", "white", "gold"),
                      ext = c("png", "jpg", "eps"),
                      filename = NULL) {
 
@@ -39,14 +41,14 @@ logo_get <- function(path = ".",
 
   fn <- glue::glue("ANU_{category}_{type_folder}_{color_text}.{ext}")
 
-  logo_path <- tryCatch(fs::path_package(package = "anu",
-                                         "logos",
-                                         color_mode,
-                                         category_folder,
-                                         type_folder,
-                                         ext_folder,
-                                         fn),
-                   error = function(e) cli::cli_abort("Could not find logo {color_mode}/{category_folder}/{type_folder}/{ext_folder}/{fn}"))
+  logo_path <- fs::path_package(package = "anu",
+                                "logos",
+                                color_mode,
+                                category_folder,
+                                type_folder,
+                                ext_folder,
+                                fn)
+  if(!fs::file_exists(logo_path)) cli::cli_alert_danger("Logo {cli::col_red(logo_path)} does not exist.")
   output_fn <- filename %||% fs::path_file(logo_path)
   new_path <- fs::path(path, output_fn)
   fs::file_copy(logo_path, new_path = new_path, overwrite = overwrite)
