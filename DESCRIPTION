@@ -21,5 +21,5 @@ Imports:
     rlang,
     stringr
 RoxygenNote: 7.2.3
-URL: https://github.com/anuopensci/anu
+URL: https://github.com/anuopensci/anu, https://anuopensci.github.io/anu/
 BugReports: https://github.com/anuopensci/anu/issues
