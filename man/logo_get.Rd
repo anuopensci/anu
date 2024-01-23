@@ -12,8 +12,10 @@ logo_get(
   overwrite = FALSE,
   color_mode = c("RGB", "CMYK"),
   category = c("primary", "secondary", "crest", "favicon"),
-  type = c("vertical", "horizontal", "inversed", "outline"),
-  color = c("gold_black", "gold_white", "black", "white", "gold"),
+  type = if (category[1] \%in\% c("primary", "secondary")) c("vertical", "horizontal")
+    else c("inversed", "outline"),
+  color = if (category[1] \%in\% c("primary", "secondary")) c("gold_black", "gold_white",
+    "black", "white") else c("black", "white", "gold"),
   ext = c("png", "jpg", "eps"),
   filename = NULL
 )
@@ -36,5 +38,16 @@ logo_get(
 \item{filename}{The output filename of the logo (defaults to the original filename).}
 }
 \description{
-A quick way of getting the logo.
+A quick way of getting the logo. Not all combinations of category, type, and color (see table below).\tabular{rcccc}{
+    \tab primary \tab secondary \tab crest \tab favicon \cr
+   vertical \tab Y \tab Y \tab  \tab  \cr
+   horizontal \tab Y \tab Y \tab  \tab  \cr
+   inversed \tab  \tab  \tab Y \tab Y \cr
+   outline \tab  \tab  \tab Y \tab  \cr
+   gold_black \tab Y \tab Y \tab  \tab  \cr
+   gold_white \tab Y \tab Y \tab  \tab  \cr
+   black \tab Y \tab Y \tab Y \tab Y \cr
+   white \tab Y \tab Y \tab Y \tab Y \cr
+   gold \tab  \tab  \tab Y \tab Y \cr
+}
 }

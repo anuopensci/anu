@@ -1,6 +1,17 @@
 #' Get the ANU logo
 #'
-#' A quick way of getting the logo.
+#' A quick way of getting the logo. Not all combinations of category, type, and color (see table below).
+#' |     | primary | secondary | crest | favicon |
+#' | ---: | :---: | :---: | :---: | :---: |
+#' | vertical |  Y |  Y |  |    |
+#' | horizontal | Y | Y  |  |    |
+#' | inversed |  |   | Y  | Y   |
+#' | outline |  |   |  Y |    |
+#' | gold_black |  Y |  Y |   |    |
+#' | gold_white | Y | Y  |   |    |
+#' | black | Y |  Y |  Y |  Y  |
+#' | white | Y  | Y  |  Y |  Y  |
+#' | gold |  |   |  Y |   Y |
 #'
 #' @param path The path to save the logo to.
 #' @param overwrite Overwrite the logo if it already exists.
