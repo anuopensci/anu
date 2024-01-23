@@ -1,0 +1,23 @@
+Package: anu
+Type: Package
+Title: Tools and templates for staff at Australian National University
+Version: 0.1.0
+Authors@R: 
+    person(given = "Emi",
+           family = "Tanaka",
+           role = c("aut", "cre"),
+           email = "dr.emi.tanaka@gmail.com",
+           comment = c(ORCID = "0000-0002-1455-259X"))
+Description: Tools and templates for use at Australian National University.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    cli,
+    clisymbols,
+    crayon,
+    fs,
+    glue,
+    rlang,
+    stringr
+RoxygenNote: 7.2.3
