@@ -8,6 +8,15 @@
 \description{
 Tools and templates for use at Australian National University.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/anuopensci/anu}
+  \item \url{https://anuopensci.github.io/anu/}
+  \item Report bugs at \url{https://github.com/anuopensci/anu/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Emi Tanaka \email{dr.emi.tanaka@gmail.com} (\href{https://orcid.org/0000-0002-1455-259X}{ORCID})
 

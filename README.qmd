@@ -1,0 +1,33 @@
+---
+format: gfm
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# ANU R package
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+**This is work-in-progress!**
+
+The `anu` package is a collection of functions to help quickly get ANU related information and assets.
+
+The current useful part of the package is that you can get the logo quickly using `logo_get()`.
+
+
+You can get the ANU color palette as
+
+```{r}
+anu::color_palette()
+```
+
