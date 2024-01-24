@@ -15,10 +15,10 @@
 #'
 #' @param path The path to save the logo to.
 #' @param overwrite Overwrite the logo if it already exists.
-#' @param color_mode Use RGB for digital communication (e.g. website) and CMYK for printing.
-#' @param category The category of the logo.
-#' @param type The type of the logo. Note that some type do not exist based on category chosen.
-#' @param color The color of the logo. Note that some colors do not exist based on category and type chosen.
+#' @param color_mode Use "RGB" for digital communication (e.g. website) and "CMYK" for printing.
+#' @param category Either "primary", "secondary", "crest", or "favicon".
+#' @param type If category is primary or secondary, then "vertical" or "horizontal", otherwise "inversed" or "outline".
+#' @param color The color of the logo ("gold_black", "gold_white", "black", "white", or "gold"). Note that some colors do not exist based on category and type chosen.
 #' @param ext The file extension of the logo. Note that some extensions do not exist based on category, type and color chosen.
 #' @param filename The output filename of the logo (defaults to the original filename).
 #'
@@ -28,10 +28,8 @@ logo_get <- function(path = ".",
                      overwrite = FALSE,
                      color_mode = c("RGB", "CMYK"),
                      category = c("primary", "secondary", "crest", "favicon"),
-                     type = if(category[1] %in% c("primary", "secondary")) c("vertical", "horizontal")
-                            else c("inversed", "outline"),
-                     color  = if(category[1] %in% c("primary", "secondary")) c("gold_black", "gold_white", "black", "white")
-                              else c("black", "white", "gold"),
+                     type = c("vertical", "horizontal", "inversed", "outline"),
+                     color  = c("gold_black", "gold_white", "black", "white", "gold"),
                      ext = c("png", "jpg", "eps"),
                      filename = NULL) {
 
@@ -42,8 +40,20 @@ logo_get <- function(path = ".",
                              Secondary = "02. Secondary",
                              Crest = "03. Crest",
                              Favicon = "04. Favicon")
+  type_allowed <- switch(category,
+                 Primary = c("vertical", "horizontal"),
+                 Secondary = c("vertical", "horizontal"),
+                 Crest = c("inversed", "outline"),
+                 Favicon = c("inversed"))
+  type <- match.arg(intersect(type, type_allowed)[1], type)
   type_folder <- stringr::str_to_title(match.arg(type))
-  color_text <- match.arg(color) |>
+  color_allowed <- switch(category,
+                  Primary = c("gold_black", "gold_white", "black", "white"),
+                  Secondary = c("gold_black", "gold_white", "black", "white"),
+                  Crest = c("black", "white", "gold"),
+                  Favicon = c("gold", "white", "black"))
+  color <- match.arg(intersect(color, color_allowed)[1], color)
+  color_text <- color |>
     stringr::str_replace_all("_", " ") |>
     stringr::str_to_title() |>
     stringr::str_replace_all(" ", "")
