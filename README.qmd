@@ -13,14 +13,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-# ANU R package
+# anubrand R package
 
 <!-- badges: start -->
 <!-- badges: end -->
 
 **This is work-in-progress!**
 
-The `anu` package is a collection of functions to help quickly get ANU related information and assets.
+The `anubrand` package is a collection of functions to help quickly get ANU related information and assets.
 
 The current useful part of the package is that you can get the logo quickly using `logo_get()`.
 
@@ -28,6 +28,6 @@ The current useful part of the package is that you can get the logo quickly usin
 You can get the ANU color palette as
 
 ```{r}
-anu::color_palette()
+anubrand::color_palette()
 ```
 
