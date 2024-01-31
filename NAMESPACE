@@ -2,4 +2,7 @@
 
 export(color_palette)
 export(logo_get)
+export(quarto_template_add)
+export(quarto_template_install)
+export(quarto_template_use)
 import(rlang)

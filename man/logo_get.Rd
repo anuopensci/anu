@@ -12,10 +12,8 @@ logo_get(
   overwrite = FALSE,
   color_mode = c("RGB", "CMYK"),
   category = c("primary", "secondary", "crest", "favicon"),
-  type = if (category[1] \%in\% c("primary", "secondary")) c("vertical", "horizontal")
-    else c("inversed", "outline"),
-  color = if (category[1] \%in\% c("primary", "secondary")) c("gold_black", "gold_white",
-    "black", "white") else c("black", "white", "gold"),
+  type = c("vertical", "horizontal", "inversed", "outline"),
+  color = c("gold_black", "gold_white", "black", "white", "gold"),
   ext = c("png", "jpg", "eps"),
   filename = NULL
 )
@@ -25,13 +23,13 @@ logo_get(
 
 \item{overwrite}{Overwrite the logo if it already exists.}
 
-\item{color_mode}{Use RGB for digital communication (e.g. website) and CMYK for printing.}
+\item{color_mode}{Use "RGB" for digital communication (e.g. website) and "CMYK" for printing.}
 
-\item{category}{The category of the logo.}
+\item{category}{Either "primary", "secondary", "crest", or "favicon".}
 
-\item{type}{The type of the logo. Note that some type do not exist based on category chosen.}
+\item{type}{If category is primary or secondary, then "vertical" or "horizontal", otherwise "inversed" or "outline".}
 
-\item{color}{The color of the logo. Note that some colors do not exist based on category and type chosen.}
+\item{color}{The color of the logo ("gold_black", "gold_white", "black", "white", or "gold"). Note that some colors do not exist based on category and type chosen.}
 
 \item{ext}{The file extension of the logo. Note that some extensions do not exist based on category, type and color chosen.}
 
