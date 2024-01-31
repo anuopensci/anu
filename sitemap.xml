@@ -13,7 +13,7 @@
     <loc>https://anuopensci.github.io/anubrand/index.html</loc>
   </url>
   <url>
-    <loc>https://anuopensci.github.io/anubrand/reference/anu-package.html</loc>
+    <loc>https://anuopensci.github.io/anubrand/reference/anubrand-package.html</loc>
   </url>
   <url>
     <loc>https://anuopensci.github.io/anubrand/reference/color_palette.html</loc>
@@ -26,5 +26,8 @@
   </url>
   <url>
     <loc>https://anuopensci.github.io/anubrand/reference/logo_get.html</loc>
+  </url>
+  <url>
+    <loc>https://anuopensci.github.io/anubrand/reference/quarto_template.html</loc>
   </url>
 </urlset>

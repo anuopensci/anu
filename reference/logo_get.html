@@ -78,10 +78,8 @@ goldYY
 <span>  overwrite <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  color_mode <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"RGB"</span>, <span class="st">"CMYK"</span><span class="op">)</span>,</span>
 <span>  category <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"secondary"</span>, <span class="st">"crest"</span>, <span class="st">"favicon"</span><span class="op">)</span>,</span>
-<span>  type <span class="op">=</span> <span class="kw">if</span> <span class="op">(</span><span class="va">category</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"secondary"</span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"vertical"</span>, <span class="st">"horizontal"</span><span class="op">)</span></span>
-<span>    <span class="kw">else</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"inversed"</span>, <span class="st">"outline"</span><span class="op">)</span>,</span>
-<span>  color <span class="op">=</span> <span class="kw">if</span> <span class="op">(</span><span class="va">category</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"primary"</span>, <span class="st">"secondary"</span><span class="op">)</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gold_black"</span>, <span class="st">"gold_white"</span>,</span>
-<span>    <span class="st">"black"</span>, <span class="st">"white"</span><span class="op">)</span> <span class="kw">else</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"black"</span>, <span class="st">"white"</span>, <span class="st">"gold"</span><span class="op">)</span>,</span>
+<span>  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"vertical"</span>, <span class="st">"horizontal"</span>, <span class="st">"inversed"</span>, <span class="st">"outline"</span><span class="op">)</span>,</span>
+<span>  color <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"gold_black"</span>, <span class="st">"gold_white"</span>, <span class="st">"black"</span>, <span class="st">"white"</span>, <span class="st">"gold"</span><span class="op">)</span>,</span>
 <span>  ext <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"png"</span>, <span class="st">"jpg"</span>, <span class="st">"eps"</span><span class="op">)</span>,</span>
 <span>  filename <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div>
@@ -102,19 +100,19 @@ goldYY
 
 
 <dt>color_mode</dt>
-<dd><p>Use RGB for digital communication (e.g. website) and CMYK for printing.</p></dd>
+<dd><p>Use "RGB" for digital communication (e.g. website) and "CMYK" for printing.</p></dd>
 
 
 <dt>category</dt>
-<dd><p>The category of the logo.</p></dd>
+<dd><p>Either "primary", "secondary", "crest", or "favicon".</p></dd>
 
 
 <dt>type</dt>
-<dd><p>The type of the logo. Note that some type do not exist based on category chosen.</p></dd>
+<dd><p>If category is primary or secondary, then "vertical" or "horizontal", otherwise "inversed" or "outline".</p></dd>
 
 
 <dt>color</dt>
-<dd><p>The color of the logo. Note that some colors do not exist based on category and type chosen.</p></dd>
+<dd><p>The color of the logo ("gold_black", "gold_white", "black", "white", or "gold"). Note that some colors do not exist based on category and type chosen.</p></dd>
 
 
 <dt>ext</dt>
