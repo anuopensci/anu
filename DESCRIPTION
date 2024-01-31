@@ -1,6 +1,6 @@
-Package: anu
+Package: anubrand
 Type: Package
-Title: Tools and templates for staff at Australian National University
+Title: Tools and templates with Australian National University brand
 Version: 0.1.0
 Authors@R: 
     person(given = "Emi",
@@ -22,5 +22,5 @@ Imports:
     stringr
 RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
-URL: https://github.com/anuopensci/anu, https://anuopensci.github.io/anu/
-BugReports: https://github.com/anuopensci/anu/issues
+URL: https://github.com/anuopensci/anubrand, https://anuopensci.github.io/anubrand/
+BugReports: https://github.com/anuopensci/anubrand/issues
